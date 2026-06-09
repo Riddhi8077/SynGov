@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./web/public/images/syn-gov-logo.png" alt="SynGov Logo" width="200" />
-  <h1>SynGov 🏛️</h1>
+  <h1>SynGov</h1>
   <p><strong>AI-Powered, Blockchain-Backed Governance for Modern Communities</strong></p>
   
   [![Next.js](https://img.shields.io/badge/Next.js-15+-black?style=flat&logo=next.js)](https://nextjs.org/)
@@ -12,7 +12,7 @@
 
 <br />
 
-## 📖 What is SynGov?
+##What is SynGov?
 
 **SynGov** (Synergistic Governance) is an intelligent, transparent, and decentralized governance platform engineered specifically for college clubs, DAOs, and student societies. 
 
@@ -22,17 +22,17 @@ Traditional community governance is plagued by chaotic group chats, disorganized
 
 ---
 
-## ⚡ Core Features
+## Core Features
 
-- 🧠 **AI-Powered Proposal Analysis:** Submit raw, unstructured ideas and let Google Gemini 2.5 instantly synthesize them. The AI automatically extracts the core objective, budget impact, risk level, and timeline, transforming a block of text into a professional executive summary.
-- 🔗 **Blockchain Transparency (Web3):** Every proposal created and every vote cast is securely logged to a Web3 Smart Contract (`SynGovLogger.sol`). This ensures that the governance process is immutable, verifiable, and completely tamper-proof.
-- 📊 **Real-Time Analytics & KPI Dashboards:** Visualize community health, active proposals by category, and historical pass/reject rates through a dynamic, real-time data dashboard.
-- 🔐 **Simulated / Configurable Authentication:** Secure member login flows using HTTP-only cookies, ready to be scaled to full OAuth/SSO.
-- 🎨 **Premium Aesthetic UI:** Built with a stunning, highly responsive Next.js interface featuring glassmorphism, fluid micro-animations, and modern design principles.
+- **AI-Powered Proposal Analysis:** Submit raw, unstructured ideas and let Google Gemini 2.5 instantly synthesize them. The AI automatically extracts the core objective, budget impact, risk level, and timeline, transforming a block of text into a professional executive summary.
+- **Blockchain Transparency (Web3):** Every proposal created and every vote cast is securely logged to a Web3 Smart Contract (`SynGovLogger.sol`). This ensures that the governance process is immutable, verifiable, and completely tamper-proof.
+- **Real-Time Analytics & KPI Dashboards:** Visualize community health, active proposals by category, and historical pass/reject rates through a dynamic, real-time data dashboard.
+- **Simulated / Configurable Authentication:** Secure member login flows using HTTP-only cookies, ready to be scaled to full OAuth/SSO.
+- **Premium Aesthetic UI:** Built with a stunning, highly responsive Next.js interface featuring glassmorphism, fluid micro-animations, and modern design principles.
 
 ---
 
-## 🏗️ Architecture & Tech Stack
+## Architecture & Tech Stack
 
 SynGov is built using a modern, full-stack architecture combining Web2 speed with Web3 transparency:
 
@@ -52,7 +52,7 @@ SynGov is built using a modern, full-stack architecture combining Web2 speed wit
 
 ---
 
-## 🚀 Local Development Setup
+## Local Development Setup
 
 Follow these instructions to set up the SynGov environment locally on your machine for development and testing.
 
@@ -112,14 +112,14 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🛡️ Security & Privacy Architecture
+## Security & Privacy Architecture
 
 - **On-Chain Anonymity:** When votes are logged to the blockchain, they utilize a cryptographically hashed User ID. This guarantees mathematical transparency of the vote tally without exposing direct identities on the public ledger.
 - **Server-Side Security:** Sensitive AI prompts, model configuration, and direct database interactions are kept entirely on the server using Next.js Server Actions, ensuring API keys are never exposed to the client browser.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to SynGov! Please see our contribution guidelines:
 1. Fork the Project
@@ -128,6 +128,6 @@ We welcome contributions to SynGov! Please see our contribution guidelines:
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is distributed under the MIT License. See `LICENSE` for more information.

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SynGov — Members Directory</title>
+  <meta name="description" content="Browse community members, their governance weights, contribution scores, and expertise.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><span class="syn">Syn</span><span class="gov">Gov</span></a>
+      <div class="navbar-links">
+        <a href="dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="proposals.html" class="navbar-link">Proposals</a>
+        <a href="analytics.html" class="navbar-link">Analytics</a>
+        <a href="members.html" class="navbar-link active">Members</a>
+      </div>
+      <div class="navbar-actions"><div class="navbar-avatar">AM</div></div>
+    </div>
+  </nav>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link"><span class="sidebar-icon">📊</span> Dashboard</a>
+        <a href="proposals.html" class="sidebar-link"><span class="sidebar-icon">📋</span> Proposals</a>
+        <a href="create-proposal.html" class="sidebar-link"><span class="sidebar-icon">✏️</span> New Proposal</a>
+        <a href="analytics.html" class="sidebar-link"><span class="sidebar-icon">📈</span> Analytics</a>
+        <a href="members.html" class="sidebar-link active"><span class="sidebar-icon">👥</span> Members</a>
+      </nav>
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">AM</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Arjun Mehta</div>
+          <div class="sidebar-user-score">Score: 72 · 1.2× weight</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <!-- Header with Image -->
+      <div class="dashboard-header">
+        <img src="images/hero-collab.png" alt="Community members">
+        <div class="dashboard-header-overlay">
+          <div class="dashboard-header-text">
+            <h2 class="text-h2">Members Directory</h2>
+            <p class="text-body-sm">32 members · 24 active contributors</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div style="display:flex;gap:12px;margin-bottom:28px;flex-wrap:wrap;">
+        <button class="btn btn-primary btn-sm" style="border-radius:var(--radius-pill);">All Members</button>
+        <button class="btn btn-secondary btn-sm" style="border-radius:var(--radius-pill);">Core</button>
+        <button class="btn btn-secondary btn-sm" style="border-radius:var(--radius-pill);">High</button>
+        <button class="btn btn-secondary btn-sm" style="border-radius:var(--radius-pill);">Medium</button>
+        <button class="btn btn-secondary btn-sm" style="border-radius:var(--radius-pill);">Low</button>
+        <div style="flex:1;"></div>
+        <input type="text" class="input" placeholder="Search members..." style="max-width:260px;padding:8px 16px;font-size:0.8125rem;">
+      </div>
+
+      <div class="members-grid">
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:var(--accent);color:#fff;">AS</div>
+          <div class="member-name">Ananya Sharma</div>
+          <div class="member-role">President · <span class="badge badge-status-active" style="font-size:0.6875rem;">core</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">92</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.5×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">18</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">finance</span>
+            <span class="member-tag">events</span>
+            <span class="member-tag">tech</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar">RK</div>
+          <div class="member-name">Rahul Kumar</div>
+          <div class="member-role">Tech Lead · <span class="badge badge-status-active" style="font-size:0.6875rem;">core</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">85</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.5×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">16</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">tech</span>
+            <span class="member-tag">operations</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:#E0E7FF;color:#4338CA;">AM</div>
+          <div class="member-name">Arjun Mehta</div>
+          <div class="member-role">Member · <span class="badge" style="font-size:0.6875rem;background:#DBEAFE;color:#1D4ED8;">high</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">72</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.2×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">14</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">finance</span>
+            <span class="member-tag">tech</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:#FCE7F3;color:#BE185D;">PP</div>
+          <div class="member-name">Priya Patel</div>
+          <div class="member-role">Treasurer · <span class="badge" style="font-size:0.6875rem;background:#DBEAFE;color:#1D4ED8;">high</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">68</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.2×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">12</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">finance</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:#FEF3C7;color:#B45309;">VS</div>
+          <div class="member-name">Vikram Singh</div>
+          <div class="member-role">Member · <span class="badge" style="font-size:0.6875rem;background:#FEF3C7;color:#B45309;">medium</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">42</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.0×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">8</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">events</span>
+            <span class="member-tag">tech</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:#E0F2FE;color:#0369A1;">SI</div>
+          <div class="member-name">Sneha Iyer</div>
+          <div class="member-role">Secretary · <span class="badge" style="font-size:0.6875rem;background:#FEF3C7;color:#B45309;">medium</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">38</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.0×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">10</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">operations</span>
+            <span class="member-tag">general</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:#F3E8FF;color:#7C3AED;">NK</div>
+          <div class="member-name">Neha Kapoor</div>
+          <div class="member-role">Member · <span class="badge" style="font-size:0.6875rem;background:#FEE2E2;color:#991B1B;">low</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">12</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.0×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">3</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">events</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:#ECFDF5;color:#059669;">DG</div>
+          <div class="member-name">Dev Gupta</div>
+          <div class="member-role">New Member · <span class="badge" style="font-size:0.6875rem;background:#FEE2E2;color:#991B1B;">low</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">5</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.0×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">tech</span>
+          </div>
+        </div>
+
+        <div class="member-card">
+          <div class="member-avatar" style="background:#FFF7ED;color:#C2410C;">MR</div>
+          <div class="member-name">Meera Reddy</div>
+          <div class="member-role">Events Head · <span class="badge badge-status-active" style="font-size:0.6875rem;">core</span></div>
+          <div class="member-stats">
+            <div class="member-stat">
+              <div class="member-stat-value">88</div>
+              <div class="member-stat-label">Score</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">1.5×</div>
+              <div class="member-stat-label">Weight</div>
+            </div>
+            <div class="member-stat">
+              <div class="member-stat-value">15</div>
+              <div class="member-stat-label">Votes</div>
+            </div>
+          </div>
+          <div class="member-tags">
+            <span class="member-tag">events</span>
+            <span class="member-tag">finance</span>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

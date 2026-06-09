@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SynGov — Community Analytics</title>
+  <meta name="description" content="Community governance analytics — participation rates, proposal outcomes, and health metrics.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><span class="syn">Syn</span><span class="gov">Gov</span></a>
+      <div class="navbar-links">
+        <a href="dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="proposals.html" class="navbar-link">Proposals</a>
+        <a href="analytics.html" class="navbar-link active">Analytics</a>
+        <a href="members.html" class="navbar-link">Members</a>
+      </div>
+      <div class="navbar-actions"><div class="navbar-avatar">AM</div></div>
+    </div>
+  </nav>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link"><span class="sidebar-icon">📊</span> Dashboard</a>
+        <a href="proposals.html" class="sidebar-link"><span class="sidebar-icon">📋</span> Proposals</a>
+        <a href="create-proposal.html" class="sidebar-link"><span class="sidebar-icon">✏️</span> New Proposal</a>
+        <a href="analytics.html" class="sidebar-link active"><span class="sidebar-icon">📈</span> Analytics</a>
+        <a href="members.html" class="sidebar-link"><span class="sidebar-icon">👥</span> Members</a>
+      </nav>
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">AM</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Arjun Mehta</div>
+          <div class="sidebar-user-score">Score: 72 · 1.2× weight</div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <!-- Header with Image -->
+      <div class="dashboard-header">
+        <img src="images/community-celebration.png" alt="Community analytics">
+        <div class="dashboard-header-overlay">
+          <div class="dashboard-header-text">
+            <h2 class="text-h2">Community Analytics</h2>
+            <p class="text-body-sm">Governance health metrics and participation insights</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card-label">Total Proposals</div>
+          <div class="stat-card-value" data-count="24">0</div>
+          <div class="stat-card-delta up">↑ 8 this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Passed</div>
+          <div class="stat-card-value" data-count="16">0</div>
+          <div class="stat-card-delta" style="color:var(--success);">67% pass rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Rejected</div>
+          <div class="stat-card-value" data-count="5">0</div>
+          <div class="stat-card-delta" style="color:var(--danger);">21% reject rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Health Score</div>
+          <div class="stat-card-value" data-count="82">0</div>
+          <div class="stat-card-delta up">↑ Strong</div>
+        </div>
+      </div>
+
+      <!-- Charts Grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;">
+
+        <!-- Proposals by Category -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="text-h4">Proposals by Category</h3>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-group">
+              <div class="bar" style="height:160px;background:var(--cat-finance);"></div>
+              <div class="bar-label">Finance</div>
+              <div class="text-data" style="font-size:0.75rem;">8</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:120px;background:var(--cat-events);"></div>
+              <div class="bar-label">Events</div>
+              <div class="text-data" style="font-size:0.75rem;">6</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:100px;background:var(--cat-tech);"></div>
+              <div class="bar-label">Tech</div>
+              <div class="text-data" style="font-size:0.75rem;">5</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:60px;background:var(--cat-operations);"></div>
+              <div class="bar-label">Ops</div>
+              <div class="text-data" style="font-size:0.75rem;">3</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:40px;background:var(--cat-general);"></div>
+              <div class="bar-label">General</div>
+              <div class="text-data" style="font-size:0.75rem;">2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Participation Trend -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="text-h4">Participation Rate Trend</h3>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-group">
+              <div class="bar" style="height:100px;background:var(--accent-muted);"></div>
+              <div class="bar-label">Oct</div>
+              <div class="text-data" style="font-size:0.75rem;">58%</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:120px;background:var(--accent-muted);"></div>
+              <div class="bar-label">Nov</div>
+              <div class="text-data" style="font-size:0.75rem;">65%</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:140px;background:var(--accent-muted);"></div>
+              <div class="bar-label">Dec</div>
+              <div class="text-data" style="font-size:0.75rem;">72%</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar" style="height:150px;background:var(--accent);"></div>
+              <div class="bar-label">Jan</div>
+              <div class="text-data" style="font-size:0.75rem;">78%</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Row -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+
+        <!-- Proposal Outcomes -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="text-h4">Proposal Outcomes</h3>
+          </div>
+          <div style="display:flex;align-items:center;gap:32px;padding:20px 0;">
+            <div class="donut-chart" style="background:conic-gradient(var(--success) 0% 67%, var(--danger) 67% 88%, var(--text-subtle) 88% 100%);">
+              <div class="donut-center">
+                <div class="text-data" style="font-size:1.5rem;color:var(--text-primary);">67%</div>
+                <div class="text-caption" style="color:var(--text-muted);">pass rate</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:12px;height:12px;border-radius:3px;background:var(--success);"></div>
+                <div>
+                  <div class="text-body-sm" style="font-weight:600;">16 Passed</div>
+                  <div class="text-caption" style="color:var(--text-muted);">67% of total</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:12px;height:12px;border-radius:3px;background:var(--danger);"></div>
+                <div>
+                  <div class="text-body-sm" style="font-weight:600;">5 Rejected</div>
+                  <div class="text-caption" style="color:var(--text-muted);">21% of total</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:12px;height:12px;border-radius:3px;background:var(--text-subtle);"></div>
+                <div>
+                  <div class="text-body-sm" style="font-weight:600;">3 Pending</div>
+                  <div class="text-caption" style="color:var(--text-muted);">12% of total</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Health Breakdown -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3 class="text-h4">Community Health</h3>
+            <span class="badge badge-status-active">Score: 82</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px;padding:8px 0;">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-body-sm" style="font-weight:500;">Participation</span>
+                <span class="text-data" style="font-size:0.75rem;color:var(--success);">78%</span>
+              </div>
+              <div class="progress-bar" style="height:6px;">
+                <div class="progress-bar-for" style="width:78%;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-body-sm" style="font-weight:500;">Proposal Activity</span>
+                <span class="text-data" style="font-size:0.75rem;color:var(--accent);">85%</span>
+              </div>
+              <div class="progress-bar" style="height:6px;">
+                <div style="width:85%;background:var(--accent);border-radius:inherit;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-body-sm" style="font-weight:500;">Vote Distribution</span>
+                <span class="text-data" style="font-size:0.75rem;color:var(--warning);">72%</span>
+              </div>
+              <div class="progress-bar" style="height:6px;">
+                <div style="width:72%;background:var(--warning);border-radius:inherit;"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <span class="text-body-sm" style="font-weight:500;">Member Engagement</span>
+                <span class="text-data" style="font-size:0.75rem;color:var(--success);">90%</span>
+              </div>
+              <div class="progress-bar" style="height:6px;">
+                <div class="progress-bar-for" style="width:90%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SynGov — Create Proposal</title>
+  <meta name="description" content="Create a new governance proposal for your community. AI will extract key details automatically.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><span class="syn">Syn</span><span class="gov">Gov</span></a>
+      <div class="navbar-links">
+        <a href="dashboard.html" class="navbar-link">Dashboard</a>
+        <a href="proposals.html" class="navbar-link active">Proposals</a>
+        <a href="analytics.html" class="navbar-link">Analytics</a>
+        <a href="members.html" class="navbar-link">Members</a>
+      </div>
+      <div class="navbar-actions">
+        <div class="navbar-avatar">AM</div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link"><span class="sidebar-icon">📊</span> Dashboard</a>
+        <a href="proposals.html" class="sidebar-link"><span class="sidebar-icon">📋</span> Proposals</a>
+        <a href="create-proposal.html" class="sidebar-link active"><span class="sidebar-icon">✏️</span> New Proposal</a>
+        <a href="analytics.html" class="sidebar-link"><span class="sidebar-icon">📈</span> Analytics</a>
+        <a href="members.html" class="sidebar-link"><span class="sidebar-icon">👥</span> Members</a>
+      </nav>
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">AM</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Arjun Mehta</div>
+          <div class="sidebar-user-score">Score: 72 · 1.2× weight</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- Page Header -->
+      <div class="mb-32">
+        <h1 class="text-h1 mb-8">Create a Proposal</h1>
+        <p class="text-body" style="color:var(--text-muted);max-width:500px;">Describe your idea. AI will extract the key details and create a structured summary for your community to review.</p>
+      </div>
+
+      <div class="create-layout">
+
+        <!-- LEFT: Form -->
+        <div>
+          <form onsubmit="event.preventDefault(); window.location.href='proposal-detail.html';">
+
+            <div class="form-group">
+              <label class="label" for="proposal-title">Proposal Title</label>
+              <input type="text" id="proposal-title" class="input" placeholder="e.g. Annual Hackathon Event Budget" required>
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="proposal-category">Category</label>
+              <select id="proposal-category" class="select" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="finance">💰 Finance</option>
+                <option value="events">🎉 Events</option>
+                <option value="tech">💻 Tech</option>
+                <option value="operations">⚙️ Operations</option>
+                <option value="general">📋 General</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="proposal-description">Description</label>
+              <textarea id="proposal-description" class="textarea" style="min-height:200px;" placeholder="Describe your proposal in detail. Include context, reasoning, and any supporting data. The AI will extract key information automatically.
+
+Example: We propose allocating ₹20,000 from the club treasury to organize our annual hackathon. The budget covers venue rental (₹5,000), food (₹6,000), prizes (₹5,000), branding (₹2,500), and contingency (₹1,500). Expected attendance: 150+ students." required></textarea>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+              <div class="form-group">
+                <label class="label" for="proposal-budget">Budget</label>
+                <input type="text" id="proposal-budget" class="input" placeholder="₹20,000 or none">
+              </div>
+              <div class="form-group">
+                <label class="label" for="proposal-timeline">Timeline</label>
+                <input type="text" id="proposal-timeline" class="input" placeholder="e.g. 3 months, Q2 2025">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="label">Risk Level</label>
+              <div class="segmented-control" id="riskControl">
+                <div class="segmented-option active" data-value="low" onclick="selectRisk(this)">🟢 Low</div>
+                <div class="segmented-option" data-value="medium" onclick="selectRisk(this)">🟡 Medium</div>
+                <div class="segmented-option" data-value="high" onclick="selectRisk(this)">🔴 High</div>
+              </div>
+              <input type="hidden" id="risk-level" value="low">
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="proposal-deadline">Voting Deadline</label>
+              <input type="date" id="proposal-deadline" class="input" required>
+            </div>
+
+            <div style="display:flex;gap:12px;margin-top:32px;">
+              <button type="submit" class="btn btn-primary" style="padding:14px 32px;">Submit Proposal</button>
+              <a href="proposals.html" class="btn btn-secondary">Cancel</a>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- RIGHT: AI Preview -->
+        <div class="ai-preview">
+          <div class="ai-preview-header">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-size:1.25rem;">✨</span>
+              <h3 class="text-h4">AI Preview</h3>
+            </div>
+            <span class="ai-badge">Gemini 2.5</span>
+          </div>
+
+          <!-- Shimmer loading state -->
+          <div class="kpi-panel" id="aiPreviewEmpty">
+            <div class="kpi-header">
+              <div class="kpi-header-title"><span>✨</span> AI Summary</div>
+            </div>
+            <div style="padding:24px;">
+              <p class="text-body-sm text-center" style="color:var(--text-subtle);margin-bottom:20px;">
+                Start typing your proposal description and the AI will generate a structured summary automatically.
+              </p>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <div class="shimmer" style="height:16px;width:100%;"></div>
+                <div class="shimmer" style="height:16px;width:80%;"></div>
+                <div class="shimmer" style="height:16px;width:60%;"></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+                  <div class="shimmer" style="height:48px;"></div>
+                  <div class="shimmer" style="height:48px;"></div>
+                  <div class="shimmer" style="height:48px;"></div>
+                  <div class="shimmer" style="height:48px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Populated state (shown after typing) -->
+          <div class="kpi-panel" id="aiPreviewFilled" style="display:none;">
+            <div class="kpi-header">
+              <div class="kpi-header-title"><span>✨</span> AI Summary</div>
+              <span class="ai-badge">Generated by Gemini</span>
+            </div>
+            <div class="kpi-grid">
+              <div class="kpi-cell">
+                <div class="kpi-label">📋 What</div>
+                <div class="kpi-value" id="ai-what">—</div>
+              </div>
+              <div class="kpi-cell">
+                <div class="kpi-label">💡 Why</div>
+                <div class="kpi-value" id="ai-why">—</div>
+              </div>
+              <div class="kpi-cell">
+                <div class="kpi-label">💰 Cost</div>
+                <div class="kpi-value" id="ai-cost" style="font-family:var(--font-mono);">—</div>
+              </div>
+              <div class="kpi-cell">
+                <div class="kpi-label">📈 Impact</div>
+                <div class="kpi-value" id="ai-impact">—</div>
+              </div>
+              <div class="kpi-cell">
+                <div class="kpi-label">⚠️ Risk</div>
+                <div class="kpi-value" id="ai-risk">—</div>
+              </div>
+              <div class="kpi-cell">
+                <div class="kpi-label">📅 Deadline</div>
+                <div class="kpi-value" id="ai-deadline" style="font-family:var(--font-mono);">—</div>
+              </div>
+              <div class="kpi-cell full-width">
+                <div class="kpi-label">👥 Who it affects</div>
+                <div class="kpi-value" id="ai-affects">—</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tips -->
+          <div class="card-flat mt-16" style="background:var(--surface);">
+            <h4 class="text-h4 mb-8" style="font-size:0.8125rem;">💡 Tips for a good proposal</h4>
+            <ul style="padding-left:16px;display:flex;flex-direction:column;gap:6px;">
+              <li class="text-caption" style="color:var(--text-muted);">Be specific about costs and timelines</li>
+              <li class="text-caption" style="color:var(--text-muted);">Explain why this matters to the community</li>
+              <li class="text-caption" style="color:var(--text-muted);">Address potential risks proactively</li>
+              <li class="text-caption" style="color:var(--text-muted);">Keep it clear — the AI works best with plain language</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Segmented control for risk level
+    function selectRisk(el) {
+      document.querySelectorAll('#riskControl .segmented-option').forEach(o => o.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('risk-level').value = el.dataset.value;
+    }
+
+    // Simulate AI preview on description input
+    let debounceTimer;
+    const descInput = document.getElementById('proposal-description');
+    if (descInput) {
+      descInput.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          const text = descInput.value;
+          if (text.length > 50) {
+            document.getElementById('aiPreviewEmpty').style.display = 'none';
+            document.getElementById('aiPreviewFilled').style.display = 'block';
+
+            // Simple extraction simulation
+            const title = document.getElementById('proposal-title').value || 'Your proposal';
+            const budget = document.getElementById('proposal-budget').value || 'Not specified';
+            const timeline = document.getElementById('proposal-timeline').value || 'Not specified';
+
+            document.getElementById('ai-what').textContent = title + ' — ' + text.substring(0, 80) + '...';
+            document.getElementById('ai-why').textContent = 'Supports community growth and engagement.';
+            document.getElementById('ai-cost').textContent = budget;
+            document.getElementById('ai-impact').textContent = 'Positive impact on club members and visibility.';
+            document.getElementById('ai-risk').innerHTML = '<span class="badge badge-risk-' + (document.getElementById('risk-level').value) + '">' + document.getElementById('risk-level').value + '</span>';
+            document.getElementById('ai-deadline').textContent = timeline;
+            document.getElementById('ai-affects').textContent = 'All club members and the broader community.';
+          }
+        }, 1500);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SynGov — Dashboard</title>
+  <meta name="description" content="SynGov governance dashboard — view active proposals, community health, and your participation score.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo"><span class="syn">Syn</span><span class="gov">Gov</span></a>
+      <div class="navbar-links">
+        <a href="dashboard.html" class="navbar-link active">Dashboard</a>
+        <a href="proposals.html" class="navbar-link">Proposals</a>
+        <a href="analytics.html" class="navbar-link">Analytics</a>
+        <a href="members.html" class="navbar-link">Members</a>
+      </div>
+      <div class="navbar-actions">
+        <div class="navbar-avatar" title="Arjun Mehta">AM</div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link active">
+          <span class="sidebar-icon">📊</span> Dashboard
+        </a>
+        <a href="proposals.html" class="sidebar-link">
+          <span class="sidebar-icon">📋</span> Proposals
+        </a>
+        <a href="create-proposal.html" class="sidebar-link">
+          <span class="sidebar-icon">✏️</span> New Proposal
+        </a>
+        <a href="analytics.html" class="sidebar-link">
+          <span class="sidebar-icon">📈</span> Analytics
+        </a>
+        <a href="members.html" class="sidebar-link">
+          <span class="sidebar-icon">👥</span> Members
+        </a>
+      </nav>
+      <div class="sidebar-user">
+        <div class="sidebar-user-avatar">AM</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Arjun Mehta</div>
+          <div class="sidebar-user-score">Score: 72 · 1.2× weight</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- Dashboard Header with Image -->
+      <div class="dashboard-header">
+        <img src="images/team-discussion.png" alt="Team collaboration">
+        <div class="dashboard-header-overlay">
+          <div class="dashboard-header-text">
+            <h2 class="text-h2">Good afternoon, Arjun</h2>
+            <p class="text-body-sm">3 proposals need your vote · Community health is strong</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card-label">Total Proposals</div>
+          <div class="stat-card-value" data-count="24">0</div>
+          <div class="stat-card-delta up">↑ 12% this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Participation Rate</div>
+          <div class="stat-card-value" data-count="78%">0%</div>
+          <div class="stat-card-delta up">↑ 5% from last week</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Active Votes</div>
+          <div class="stat-card-value" data-count="6">0</div>
+          <div class="stat-card-delta">3 closing soon</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-label">Your Score</div>
+          <div class="stat-card-value" data-count="72">0</div>
+          <div class="stat-card-delta up">↑ High contributor</div>
+        </div>
+      </div>
+
+      <!-- Section: Active Proposals -->
+      <div class="page-header">
+        <h3 class="text-h3">Active Proposals</h3>
+        <a href="create-proposal.html" class="btn btn-primary btn-sm">+ New Proposal</a>
+      </div>
+
+      <div class="proposals-grid mb-32">
+
+        <!-- Proposal 1 -->
+        <a href="proposal-detail.html" class="proposal-card">
+          <div class="proposal-card-badges">
+            <span class="badge badge-finance">finance</span>
+            <span class="badge badge-risk-medium">medium risk</span>
+            <span class="badge badge-status-active">active</span>
+          </div>
+          <h4 class="proposal-card-title">Annual Hackathon Event Budget</h4>
+          <p class="proposal-card-summary">Allocate ₹20,000 for our annual hackathon covering venue, meals, prizes, and branding materials.</p>
+          <div class="proposal-card-vote">
+            <div class="proposal-card-vote-header">
+              <span style="color:var(--success);">18 for</span>
+              <span style="color:var(--danger);">4 against</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-for" style="width:75%;"></div>
+              <div class="progress-bar-against" style="width:17%;"></div>
+            </div>
+          </div>
+          <div class="proposal-card-meta">
+            <span>👥 78% participated</span>
+            <span>📅 Closes Feb 15</span>
+            <span>💰 ₹20,000</span>
+          </div>
+        </a>
+
+        <!-- Proposal 2 -->
+        <a href="proposal-detail.html" class="proposal-card">
+          <div class="proposal-card-badges">
+            <span class="badge badge-tech">tech</span>
+            <span class="badge badge-risk-low">low risk</span>
+            <span class="badge badge-status-active">active</span>
+          </div>
+          <h4 class="proposal-card-title">Migrate Club Website to Next.js</h4>
+          <p class="proposal-card-summary">Proposal to rebuild the club website using Next.js 15 with App Router for better performance and SEO.</p>
+          <div class="proposal-card-vote">
+            <div class="proposal-card-vote-header">
+              <span style="color:var(--success);">22 for</span>
+              <span style="color:var(--danger);">2 against</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-for" style="width:88%;"></div>
+              <div class="progress-bar-against" style="width:8%;"></div>
+            </div>
+          </div>
+          <div class="proposal-card-meta">
+            <span>👥 85% participated</span>
+            <span>📅 Closes Feb 20</span>
+          </div>
+        </a>
+
+        <!-- Proposal 3 -->
+        <a href="proposal-detail.html" class="proposal-card">
+          <div class="proposal-card-badges">
+            <span class="badge badge-events">events</span>
+            <span class="badge badge-risk-medium">medium risk</span>
+            <span class="badge badge-status-active">active</span>
+          </div>
+          <h4 class="proposal-card-title">Inter-College Tech Symposium Partnership</h4>
+          <p class="proposal-card-summary">Partner with 3 neighboring colleges to host a joint tech symposium in March 2025.</p>
+          <div class="proposal-card-vote">
+            <div class="proposal-card-vote-header">
+              <span style="color:var(--success);">14 for</span>
+              <span style="color:var(--danger);">8 against</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-for" style="width:58%;"></div>
+              <div class="progress-bar-against" style="width:33%;"></div>
+            </div>
+          </div>
+          <div class="proposal-card-meta">
+            <span>👥 65% participated</span>
+            <span>📅 Closes Feb 18</span>
+            <span>💰 ₹15,000</span>
+          </div>
+        </a>
+
+        <!-- Proposal 4 -->
+        <a href="proposal-detail.html" class="proposal-card">
+          <div class="proposal-card-badges">
+            <span class="badge badge-operations">operations</span>
+            <span class="badge badge-risk-low">low risk</span>
+            <span class="badge badge-status-active">active</span>
+          </div>
+          <h4 class="proposal-card-title">Weekly Meeting Schedule Change</h4>
+          <p class="proposal-card-summary">Move weekly club meetings from Thursday 6PM to Wednesday 5PM to improve attendance rates.</p>
+          <div class="proposal-card-vote">
+            <div class="proposal-card-vote-header">
+              <span style="color:var(--success);">20 for</span>
+              <span style="color:var(--danger);">6 against</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-for" style="width:71%;"></div>
+              <div class="progress-bar-against" style="width:21%;"></div>
+            </div>
+          </div>
+          <div class="proposal-card-meta">
+            <span>👥 72% participated</span>
+            <span>📅 Closes Feb 12</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Activity Feed -->
+      <div class="page-header">
+        <h3 class="text-h3">Recent Activity</h3>
+      </div>
+
+      <div class="card-flat">
+        <div class="activity-feed">
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--success);"></div>
+            <div>
+              <p class="text-body-sm"><strong>Priya Patel</strong> voted <strong style="color:var(--success);">for</strong> "Annual Hackathon Event Budget"</p>
+              <span class="activity-time">2 minutes ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--accent);"></div>
+            <div>
+              <p class="text-body-sm"><strong>Rahul Kumar</strong> created proposal "Inter-College Tech Symposium Partnership"</p>
+              <span class="activity-time">15 minutes ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--danger);"></div>
+            <div>
+              <p class="text-body-sm"><strong>Sneha Iyer</strong> voted <strong style="color:var(--danger);">against</strong> "Weekly Meeting Schedule Change"</p>
+              <span class="activity-time">1 hour ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--success);"></div>
+            <div>
+              <p class="text-body-sm"><strong>Vikram Singh</strong> voted <strong style="color:var(--success);">for</strong> "Migrate Club Website to Next.js"</p>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--accent);"></div>
+            <div>
+              <p class="text-body-sm"><strong>Ananya Sharma</strong> commented on "Annual Hackathon Event Budget"</p>
+              <span class="activity-time">3 hours ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@
 
 <br />
 
-##What is SynGov?
+## What is SynGov?
 
 **SynGov** (Synergistic Governance) is an intelligent, transparent, and decentralized governance platform engineered specifically for college clubs, DAOs, and student societies. 
 
